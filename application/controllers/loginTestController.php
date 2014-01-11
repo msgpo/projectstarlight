@@ -13,6 +13,9 @@ class LoginTestController extends CI_Controller
 	{
 		//Test 1
 		$this->LoginTestModel->testCorrectCredentials();
+		$this->LoginTestModel->testBlankCredentials();
+		$this->LoginTestModel->testWrongUsername();
+		$this->LoginTestModel->testWrongPassword();
 		echo $this->unit->report();
 		
 		echo base_url();
