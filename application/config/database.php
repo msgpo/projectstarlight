@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
+$db['default']['username'] = 'postgres';
 $db['default']['password'] = 'desperaux';
-$db['default']['database'] = 'df_lms';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['database'] = 'slms';
+$db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

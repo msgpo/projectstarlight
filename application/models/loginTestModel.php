@@ -9,7 +9,6 @@ class LoginTestModel extends CI_Model
 		$this->load->model('LoginModel','',TRUE);
 	}
 	
-
 	function testCorrectCredentials()
 	{
 		$result = $this->LoginModel->checkCredentials("kureido","sniper");
