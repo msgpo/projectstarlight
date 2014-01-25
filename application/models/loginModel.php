@@ -4,7 +4,6 @@ class LoginModel extends CI_Model
 {
 	function checkCredentials($username,$password)
 	{
-		
 	}	
 }
 

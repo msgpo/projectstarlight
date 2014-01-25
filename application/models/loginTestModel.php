@@ -26,8 +26,8 @@ class LoginTestModel extends CI_Model
 	function testBlankCredentials()
 	{
 		$result = $this->LoginModel->checkCredentials("","");
-		$test_res = ($result === -1); // matches content, -1 means field should not be blank
-        $expected_result = true;
+		$test_res = $result; // matches content, -1 means field should not be blank
+        $expected_result = -1;
         $test_name = 'Has the user submitted blank spaces?';
         $this->unit->run($test_res, $expected_result, $test_name); 
 	}
@@ -35,8 +35,8 @@ class LoginTestModel extends CI_Model
 	function testWrongUsername()
 	{
 		$result = $this->LoginModel->checkCredentials("puryagabamatapobre","sniper");
-		$test_res = ($result === -2); // matches content, -2 means invalid username OR password
-        $expected_result = true;
+		$test_res = $result; // matches content, -2 means invalid username OR password
+        $expected_result = -2;
         $test_name = 'Has the user entered a wrong username?';
         $this->unit->run($test_res, $expected_result, $test_name); 
 	}
@@ -44,8 +44,8 @@ class LoginTestModel extends CI_Model
 	function testWrongPassword()
 	{
 		$result = $this->LoginModel->checkCredentials("kureido","crazedgunman");
-		$test_res = ($result === -2); // matches content, -2 means invalid username OR password
-        $expected_result = true;
+		$test_res = $result; // matches content, -2 means invalid username OR password
+        $expected_result = -2;
         $test_name = 'Has the user entered a wrong password?';
         $this->unit->run($test_res, $expected_result, $test_name); 
 	}
