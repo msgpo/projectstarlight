@@ -6,12 +6,13 @@ class Sport extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('SportModel','',TRUE);
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('table');
 	}
 	
 	public function index()
 	{
-		$this->load->library('table');
-    
 		$sports_qry = $this->SportModel->listAllSports();
 
 		// generate HTML table from query results
@@ -24,5 +25,21 @@ class Sport extends CI_Controller
 		$data['data_table'] = $sports_table;
 
 		$this->load->view('template', $data);
+	}
+	
+	public function addsport()
+	{
+		// display information for the view
+		$data['title'] = "League Management System - Add new sport";
+		$data['headline'] = "Add a New Sport";
+		$data['include'] = 'sport_add';
+
+		$this->load->view('template', $data);
+	}
+	
+	public function createsport()
+	{
+		$this->SportModel->addNewSport($_POST);
+		redirect('sport/index','refresh');
 	}
 }

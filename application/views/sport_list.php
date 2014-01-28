@@ -7,4 +7,5 @@ If you do not see your prefered sport listed, add it here.
 <?php 
 	echo $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '/addsport'; 
 	echo '<br />';
+	echo base_url();
 ?>

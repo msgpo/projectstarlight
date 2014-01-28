@@ -4,6 +4,13 @@ class LoginModel extends CI_Model
 {
 	function checkCredentials($username,$password)
 	{
+		if ($username == "" || $password == "")
+		{
+			return "Username/Password must be filled";
+		}
+		else
+		{
+		}
 	}	
 }
 

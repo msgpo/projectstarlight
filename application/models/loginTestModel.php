@@ -16,7 +16,7 @@ class LoginTestModel extends CI_Model
 	
 	function testCorrectCredentials()
 	{
-		$result = $this->LoginModel->checkCredentials("kureido","sniper");
+		$result = $this->LoginModel->checkCredentials("kureido","sniper")->username;
 		$test_res = ($result > 0); // matches content, the return value is the id
         $expected_result = true;
         $test_name = 'Has the user submitted the correct details?';
