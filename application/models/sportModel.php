@@ -20,11 +20,12 @@ class SportModel extends CI_Model
 		return $this->db->get('sport');
 	}
 	
-	function addNewSport()
+	function addNewSport($sport)
 	{
+		$this->db->insert('sport', $sport);
 	}
 }
 
 
-/* End of file loginModel.php */
-/* Location: ./application/controllers/leagueTestModel.php */
+/* End of file sportModel.php */
+/* Location: ./application/controllers/sportModel.php */

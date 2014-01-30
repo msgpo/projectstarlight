@@ -16,7 +16,28 @@ class Sport extends CI_Controller
 		$sports_qry = $this->SportModel->listAllSports();
 
 		// generate HTML table from query results
-		$sports_table = $this->table->generate($sports_qry);
+		$tmpl = array (
+      'table_open' => '<table border="0" cellpadding="3" cellspacing="0">',
+      'heading_row_start' => '<tr bgcolor="#66cc44">',
+      'row_start' => '<tr bgcolor="#dddddd">' 
+      );
+    $this->table->set_template($tmpl); 
+    
+    $this->table->set_empty("&nbsp;"); 
+  
+    $this->table->set_heading('', 'Sport Name');
+  
+    $table_row = array();
+    foreach ($sports_qry->result() as $sport)
+    {
+      $table_row = NULL;
+      $table_row[] = anchor('sport/edit/' . $sport->sport_id, 'Edit');
+      $table_row[] = $sport->sport_name;
+
+      $this->table->add_row($table_row);
+    }    
+
+		$sports_table = $this->table->generate();
 	
 		// display information for the view
 		$data['title'] = "League Management System - Allowed Sport List";

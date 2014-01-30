@@ -2,10 +2,5 @@
 <br />
 <?php echo $data_table; ?>
 <p>
-If you do not see your prefered sport listed, add it here.
+If you do not see your prefered sport listed, <a href="<?php echo base_url(); ?>index.php/sport/addsport">add it here</a>.
 </p>
-<?php 
-	echo $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '/addsport'; 
-	echo '<br />';
-	echo base_url();
-?>
